@@ -1,0 +1,55 @@
+﻿生成启动时间为 2017/9/22 星期五 17:15:44。
+     1>项目“F:\Quick-Cocos2dx-Community\cocos\editor-support\spine\proj.win32\libSpine.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\vs2013\VC\bin\CL.exe /c /I"F:\Quick-Cocos2dx-Community\cocos\2d\..\..\\" /I"F:\Quick-Cocos2dx-Community\cocos\2d\..\..\cocos\audio\include" /I"F:\Quick-Cocos2dx-Community\cocos\2d\..\..\cocos\editor-support" /I"F:\Quick-Cocos2dx-Community\cocos\2d\..\..\extensions" /I"F:\Quick-Cocos2dx-Community\cocos\2d\..\..\cocos\editor-support" /I"F:\Quick-Cocos2dx-Community\cocos\2d\..\..\cocos" /I"F:\Quick-Cocos2dx-Community\cocos\2d\..\..\cocos\platform" /I"F:\Quick-Cocos2dx-Community\cocos\2d\..\..\cocos\platform\desktop" /I"F:\Quick-Cocos2dx-Community\cocos\2d\..\..\external\glfw3\include\win32" /I"F:\Quick-Cocos2dx-Community\cocos\2d\..\..\external\win32-specific\gles\include\OGLES" /ZI /nologo /W3 /WX- /MP /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _LIB /D COCOS2DXWIN32_EXPORTS /D GL_GLEXT_PROTOTYPES /D COCOS2D_DEBUG=1 /D _CRT_SECURE_NO_WARNINGS /D _SCL_SECURE_NO_WARNINGS /D _VARIADIC_MAX=10 /D _UNICODE /D UNICODE /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug.win32\\" /Fd"Debug.win32\vc120.pdb" /Gd /TP /wd4267 /wd4251 /wd4244 /analyze- /errorReport:prompt ..\AttachmentVertices.cpp ..\Cocos2dAttachmentLoader.cpp ..\SkeletonAnimation.cpp ..\SkeletonBatch.cpp ..\SkeletonRenderer.cpp "..\spine-cocos2dx.cpp"
+         AttachmentVertices.cpp
+         Cocos2dAttachmentLoader.cpp
+         SkeletonAnimation.cpp
+         SkeletonBatch.cpp
+         SkeletonRenderer.cpp
+         spine-cocos2dx.cpp
+       Lib:
+         D:\vs2013\VC\bin\Lib.exe /OUT:"F:\Quick-Cocos2dx-Community\quick\player\proj.win32\Debug.win32\libSpine.lib" /NOLOGO Debug.win32\Animation.obj
+         Debug.win32\AnimationState.obj
+         Debug.win32\AnimationStateData.obj
+         Debug.win32\Atlas.obj
+         Debug.win32\AtlasAttachmentLoader.obj
+         Debug.win32\Attachment.obj
+         Debug.win32\AttachmentLoader.obj
+         Debug.win32\AttachmentVertices.obj
+         Debug.win32\Bone.obj
+         Debug.win32\BoneData.obj
+         Debug.win32\BoundingBoxAttachment.obj
+         Debug.win32\Cocos2dAttachmentLoader.obj
+         Debug.win32\Event.obj
+         Debug.win32\EventData.obj
+         Debug.win32\extension.obj
+         Debug.win32\IkConstraint.obj
+         Debug.win32\IkConstraintData.obj
+         Debug.win32\Json.obj
+         Debug.win32\MeshAttachment.obj
+         Debug.win32\PathAttachment.obj
+         Debug.win32\PathConstraint.obj
+         Debug.win32\PathConstraintData.obj
+         Debug.win32\RegionAttachment.obj
+         Debug.win32\Skeleton.obj
+         Debug.win32\SkeletonAnimation.obj
+         Debug.win32\SkeletonBatch.obj
+         Debug.win32\SkeletonBinary.obj
+         Debug.win32\SkeletonBounds.obj
+         Debug.win32\SkeletonData.obj
+         Debug.win32\SkeletonJson.obj
+         Debug.win32\SkeletonRenderer.obj
+         Debug.win32\Skin.obj
+         Debug.win32\Slot.obj
+         Debug.win32\SlotData.obj
+         "Debug.win32\spine-cocos2dx.obj"
+         Debug.win32\TransformConstraint.obj
+         Debug.win32\TransformConstraintData.obj
+         Debug.win32\VertexAttachment.obj
+         libSpine.vcxproj -> F:\Quick-Cocos2dx-Community\quick\player\proj.win32\Debug.win32\libSpine.lib
+     1>已完成生成项目“F:\Quick-Cocos2dx-Community\cocos\editor-support\spine\proj.win32\libSpine.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:10.10
