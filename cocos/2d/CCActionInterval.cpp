@@ -420,7 +420,8 @@ void Repeat::update(float dt)
 {
     if (dt >= _nextDt)
     {
-        while (dt > _nextDt && _total < _times)
+        //while (dt > _nextDt && _total < _times)
+        while (dt >= _nextDt && _total < _times)
         {
 
             _innerAction->update(1.0f);
@@ -432,8 +433,10 @@ void Repeat::update(float dt)
         }
 
         // fix for issue #1288, incorrect end value of repeat
-        if(dt >= 1.0f && _total < _times) 
+        //if(dt >= 1.0f && _total < _times) 
+        if (std::abs(dt - 1.0f) < FLT_EPSILON && _total < _times)
         {
+            _innerAction->update(1.0f);
             _total++;
         }
 
@@ -442,7 +445,7 @@ void Repeat::update(float dt)
         {
             if (_total == _times)
             {
-                _innerAction->update(1);
+                //_innerAction->update(1);
                 _innerAction->stop();
             }
             else
