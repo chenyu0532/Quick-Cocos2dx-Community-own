@@ -238,7 +238,8 @@ public:
     // string related stuff
     int getStringNumLines() const;
     int getStringLength() const;
-
+    // get line at num of rendered string
+    std::string getStringOfLine(int num);
     FontAtlas* getFontAtlas() { return _fontAtlas; }
     
     virtual void setBlendFunc(const BlendFunc &blendFunc) override;

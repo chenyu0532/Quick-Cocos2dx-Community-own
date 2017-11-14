@@ -1242,7 +1242,37 @@ int Label::getStringNumLines() const {
 
     return _currNumLines;
 }
-
+std::string Label::getStringOfLine(int num)
+ {
+     if (_contentDirty) {
+         const_cast<Label*>(this)->updateContent();
+     }
+     
+     std::string utf8str;
+     StringUtils::UTF16ToUTF8(_currentUTF16String, utf8str);
+     
+     std::string::size_type pos1, pos2;
+     pos2 = utf8str.find('\n');
+     pos1 = 0;
+     while (std::string::npos != pos2) {
+         num--;
+         if (0 == num) {
+             return utf8str.substr(pos1, pos2 - pos1);
+         }
+         
+        pos1 = pos2 + 1;
+        pos2 = utf8str.find('\n', pos1);
+     }
+     if (pos1 != utf8str.length()) {
+         num--;
+         if (0 == num) {
+             return utf8str.substr(pos1);
+         }
+     }
+ 
+     return "";
+ }
+ 
 int Label::getStringLength() const
 {
     return static_cast<int>(_currentUTF16String.length());
