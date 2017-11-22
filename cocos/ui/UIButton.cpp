@@ -501,7 +501,7 @@ void Button::onPressStateChangedToPressed()
     else
     {
         _buttonNormalRenderer->setVisible(true);
-        _buttonClickedRenderer->setVisible(true);
+        _buttonClickedRenderer->setVisible(false);
         _buttonDisableRenderer->setVisible(false);
         if (_scale9Enabled)
         {
