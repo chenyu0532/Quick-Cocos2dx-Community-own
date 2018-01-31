@@ -25,6 +25,7 @@ THE SOFTWARE.
 package org.cocos2dx.lib;
 
 import android.content.Context;
+import android.media.AudioManager;
 import android.util.AttributeSet;
 import android.view.KeyEvent;
 import android.widget.EditText;
@@ -39,6 +40,7 @@ public class Cocos2dxEditText extends EditText {
     // ===========================================================
 
     private Cocos2dxGLSurfaceView mCocos2dxGLSurfaceView;
+    private AudioManager audio;
 
     // ===========================================================
     // Constructors
@@ -71,12 +73,20 @@ public class Cocos2dxEditText extends EditText {
     @Override
     public boolean onKeyDown(final int pKeyCode, final KeyEvent pKeyEvent) {
         super.onKeyDown(pKeyCode, pKeyEvent);
-
+        
+        int currentVolume = audio.getStreamVolume(AudioManager.STREAM_MUSIC);
         // Let GlSurfaceView get focus if back key is input.
         if (pKeyCode == KeyEvent.KEYCODE_BACK) {
             this.mCocos2dxGLSurfaceView.requestFocus();
         }
-
+		else if(pKeyCode == KeyEvent.KEYCODE_VOLUME_DOWN)
+		{ 
+		    audio.setStreamVolume(AudioManager.STREAM_MUSIC, currentVolume-1, 1);//2
+		}
+		else if(pKeyCode == KeyEvent.KEYCODE_VOLUME_UP)
+		{
+		    audio.setStreamVolume(AudioManager.STREAM_MUSIC, currentVolume+1, 1);//3
+		}
         return true;
     }
 
