@@ -250,7 +250,7 @@ void PlayerWin::registerKeyboardEvent()
 
 int PlayerWin::run()
 {
-    FileUtils::getInstance()->setPopupNotify(false);
+    //FileUtils::getInstance()->setPopupNotify(false);
 
     INITCOMMONCONTROLSEX InitCtrls;
     InitCtrls.dwSize = sizeof(InitCtrls);
