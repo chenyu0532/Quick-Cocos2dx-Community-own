@@ -743,11 +743,12 @@ bool Widget::onTouchBegan(Touch *touch, Event *unusedEvent)
     
 void Widget::propagateTouchEvent(cocos2d::ui::Widget::TouchEventType event, cocos2d::ui::Widget *sender, cocos2d::Touch *touch)
 {
-    Widget* widgetParent = getWidgetParent();
-    if (widgetParent)
-    {
-        widgetParent->interceptTouchEvent(event, sender, touch);
-    }
+    // Widget* widgetParent = getWidgetParent();
+    // if (widgetParent)
+    // {
+    //     widgetParent->interceptTouchEvent(event, sender, touch);
+    // }
+    interceptTouchEvent(event, sender, touch);
 }
 
 void Widget::onTouchMoved(Touch *touch, Event *unusedEvent)
@@ -899,6 +900,7 @@ bool Widget::isClippingParentContainsPoint(const Vec2 &pt)
 {
     _affectByClipping = false;
     Widget* parent = getWidgetParent();
+    //Widget* parent = getParent();
     Widget* clippingParent = nullptr;
     while (parent)
     {
@@ -913,6 +915,7 @@ bool Widget::isClippingParentContainsPoint(const Vec2 &pt)
             }
         }
         parent = parent->getWidgetParent();
+        //parent = parent->getParent();
     }
 
     if (!_affectByClipping)
@@ -935,6 +938,17 @@ bool Widget::isClippingParentContainsPoint(const Vec2 &pt)
         return false;
     }
     return true;
+    // Node *parent = this;
+    // while (parent) {
+    //     parent = parent->getParent();
+    //     Layout *layout = dynamic_cast<Layout*>(parent);
+    //     if (layout && layout->isClippingEnabled()) {
+    //         if (!layout->hitTest(pt)) {
+    //              return false;
+    //         }
+    //     }
+    // }
+    // return true;
 }
 
 void Widget::interceptTouchEvent(cocos2d::ui::Widget::TouchEventType event, cocos2d::ui::Widget *sender, Touch *touch)
@@ -944,7 +958,18 @@ void Widget::interceptTouchEvent(cocos2d::ui::Widget::TouchEventType event, coco
     {
         widgetParent->interceptTouchEvent(event,sender,touch);
     }
-
+    // make sure check not break by non-Widget node.
+    // Node *parent = this;
+    // while (parent)
+    // {
+    //     parent = parent->getParent();
+    //     Widget *widget = dynamic_cast<Widget *>(parent);
+    //     if (widget)
+    //     {
+    //         widget->interceptTouchEvent(event, sender, touch);
+    //         break;
+    //     }
+    // }
 }
 
 void Widget::setPosition(const Vec2 &pos)
