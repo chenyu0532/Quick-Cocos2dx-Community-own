@@ -111,6 +111,9 @@ if CONFIG_SCREEN_AUTOSCALE and CONFIG_SCREEN_AUTOSCALE ~="NONE" then
     if CONFIG_SCREEN_AUTOSCALE == "EXACT_FIT" then
         scale = 1.0
         glview:setDesignResolutionSize(CONFIG_SCREEN_WIDTH, CONFIG_SCREEN_HEIGHT, cc.ResolutionPolicy.EXACT_FIT)
+    elseif CONFIG_SCREEN_AUTOSCALE == "SHOW_ALL" then
+        scale = 1.0
+        glview:setDesignResolutionSize(CONFIG_SCREEN_WIDTH, CONFIG_SCREEN_HEIGHT, cc.ResolutionPolicy.SHOW_ALL)
     elseif CONFIG_SCREEN_AUTOSCALE == "FILL_ALL" then
         CONFIG_SCREEN_WIDTH = w
         CONFIG_SCREEN_HEIGHT = h
